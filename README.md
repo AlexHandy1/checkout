@@ -16,7 +16,7 @@ Checkout object
 
 Item object
 >> responsible for knowing its code, name and price
->> e.g. co.scan(Item.new(001, Lavendar Heart, £9.25))
+>> e.g. co.scan(Item.new(001, Lavender Heart, £9.25))
 
 Promotional rules object
 >> responsible for storing the rules that apply to checkout
