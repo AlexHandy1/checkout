@@ -22,8 +22,14 @@ class Checkout
   def total
     price_index = 2
     item_total = @scanned_items.map{|item|item.select.with_index{|_,i| i == price_index}}.flatten.reduce(:+)
-    if @promotional_rules[:promo1].call(@scanned_items, item_total)
-      item_total -= ((9.25 - 8.50) * @scanned_items.map{|x| x[1]}.select{|x| x == "Lavender heart"}.length)
+    apply_discounts(item_total, @scanned_items)
+  end
+
+  def apply_discounts(item_total, scanned_items)
+    old_lavender_price = 9.25
+    new_lavender_price = 8.50
+    if @promotional_rules[:promo1].call(scanned_items, item_total)
+      item_total -= ((old_lavender_price - new_lavender_price) * scanned_items.map{|x| x[1]}.select{|x| x == "Lavender heart"}.length)
     end
     if @promotional_rules[:promo2].call(item_total)
       item_total -= (item_total * 0.1)
