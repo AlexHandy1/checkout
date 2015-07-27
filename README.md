@@ -18,8 +18,8 @@ Use Cases:
           So that I can process an order,
           I want to be able to calculate the total price of scanned basket items
 
-    - [x] As a cashier
-         So that I can offer discounts
+    - [x] As a cashier,
+         So that I can offer discounts,
          I want to be able to apply a flexible range of discount offers to relevant scanned basket items
 ```
 
@@ -28,7 +28,7 @@ How to run
 
 ### Local Installation
 
-Run the below commands in your command line interface to view the static web page and run the test suite. Ensure have Ruby and Rspec installed on your local machine.
+Run the below commands in your command line interface to run the test suite and test functionality in IRB. Ensure have Ruby and Rspec installed on your local machine.
 
 ```
 git clone https://github.com/AlexHandy1/checkout
